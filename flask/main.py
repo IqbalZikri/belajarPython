@@ -20,7 +20,10 @@ def about():
 def contact():
     return '<h1>Contact Us</h1>'
 
-@app.route('/profile', defaults = {'username': 'guest'})
-@app.route('/profile/<string:username>')
-def profile_name(username):
-    return '<h1>Hello %s!</h1>' % username
+@app.route('/profile', defaults = {'_route': "home",'username': 'guest'})
+@app.route('/profile/<string:username>', defaults = {'_route' : "profile"})
+def profile_name(username, _route):
+    if _route == "home" :
+        return '<h1>Profile %s</h1>' % username
+    elif _route == "profile" :
+        return '<h1>Hello %s!</h1>' % username
