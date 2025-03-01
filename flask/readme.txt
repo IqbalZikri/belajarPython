@@ -4,3 +4,8 @@ Untuk Menjalankan flask bisa dengan :
 
 note :
 Jika ingin menggunakan .env sendiri pada python maka harus menginstall pip python-dotenv terlebih dahulu
+
+ringkasan video ke 4 :
+HTML Escape
+HTML Escape berarti menghapus karakter spesial di dalam HTML
+contoh : < > &

@@ -1,4 +1,6 @@
 from flask import Flask # digunakan untuk mengimport atau memanggil sebuah framework bernama flask
+from markupsafe import escape
+#from flask import escape --> sudah tidak bisa digunakan
 
 app = Flask(__name__) # Digunankan untuk membuat sebuah variabel yang didalamnya menyimpan instance dari aplikasi flask, __name__ adalah variable khusus dalam python yang berisi nama modul saat ini
 """ 
@@ -27,3 +29,7 @@ def profile_name(username, _route):
         return '<h1>Profile %s</h1>' % username
     elif _route == "profile" :
         return '<h1>Hello %s!</h1>' % username
+    
+@app.route('/htmlescape/<code>')
+def htmlescape(code):
+    return escape(code)
